@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Fat Loss Prompt Finder | Transform Strong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1B8A8A;
+  --teal-dark: #14696A;
+  --teal-light: #E6F4F4;
+  --teal-mid: #C0DEDE;
+  --black: #111111;
+  --dgray: #3A3A3A;
+  --mgray: #777777;
+  --lgray: #F4F4F4;
+  --white: #FFFFFF;
+  --border: #E5E5E5;
+  --shadow: 0 2px 16px rgba(27,138,138,0.10);
+  --shadow-hover: 0 6px 32px rgba(27,138,138,0.18);
+  --radius: 12px;
+  --footer-h: 68px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  min-height: 100vh;
+  padding-bottom: calc(var(--footer-h) + 24px);
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+.site-header {
+  background: var(--white);
+  border-bottom: 1.5px solid var(--border);
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.05);
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-light);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* ── HERO ─────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  padding: 40px 24px 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.hero-title span { color: rgba(255,255,255,0.75); }
+
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+/* ── STATS BAR ────────────────────────────────── */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  max-width: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.stat {
+  flex: 1;
+  padding: 12px 8px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+.stat:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-top: 3px;
+}
+
+/* ── CONTROLS ─────────────────────────────────── */
+.controls {
+  padding: 24px 16px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mode-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mgray);
+  margin-bottom: 10px;
+}
+
+/* MODE TOGGLE */
+.mode-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-btn::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--teal);
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+  border-radius: 0 2px 2px 0;
+}
+
+.mode-btn.active {
+  border-color: var(--teal);
+  background: var(--teal-light);
+}
+
+.mode-btn.active::before { transform: scaleY(1); }
+
+.mode-btn-icon {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.mode-btn-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--black);
+  display: block;
+}
+
+.mode-btn.active .mode-btn-title { color: var(--teal-dark); }
+
+.mode-btn-sub {
+  font-size: 11px;
+  color: var(--mgray);
+  display: block;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+/* CATEGORY PILLS */
+.cat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mgray);
+  margin-bottom: 10px;
+}
+
+.cat-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cat-pill {
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dgray);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.cat-pill:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.cat-pill.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+}
+
+/* ── RESULTS BAR ──────────────────────────────── */
+.results-bar {
+  max-width: 900px;
+  margin: 16px auto 0;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.results-count {
+  font-size: 13px;
+  color: var(--mgray);
+  font-weight: 500;
+}
+
+.results-count span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: var(--teal);
+}
+
+.reset-btn {
+  font-size: 12px;
+  color: var(--teal);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.3px;
+  padding: 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── PROMPT GRID ──────────────────────────────── */
+.prompt-grid {
+  max-width: 900px;
+  margin: 16px auto 0;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* ── PROMPT CARD ──────────────────────────────── */
+.prompt-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.prompt-card:hover {
+  border-color: var(--teal);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.prompt-card.hidden {
+  display: none;
+}
+
+.card-header {
+  padding: 14px 16px 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--white);
+  background: var(--teal);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.card-meta {
+  flex: 1;
+}
+
+.card-cat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.25;
+}
+
+.card-body {
+  padding: 0 16px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prompt-bubble {
+  background: var(--lgray);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--dgray);
+  line-height: 1.55;
+  position: relative;
+}
+
+.prompt-bubble::before {
+  content: '"';
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  color: var(--teal-mid);
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  line-height: 1;
+  font-style: normal;
+}
+
+.prompt-text {
+  display: block;
+  padding-left: 14px;
+}
+
+.tip-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.tip-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.tip-text {
+  font-size: 12px;
+  color: var(--mgray);
+  line-height: 1.45;
+}
+
+.card-footer {
+  padding: 10px 16px 14px;
+  border-top: 1px solid var(--border);
+}
+
+.copy-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--teal-light);
+  border: 1.5px solid var(--teal-mid);
+  border-radius: 8px;
+  color: var(--teal-dark);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.copy-btn:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+}
+
+.copy-btn.copied {
+  background: #22c55e;
+  border-color: #16a34a;
+  color: var(--white);
+}
+
+.copy-icon { font-size: 14px; }
+
+/* ── EMPTY STATE ──────────────────────────────── */
+.empty-state {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+  text-align: center;
+  display: none;
+}
+
+.empty-state.visible { display: block; }
+
+.empty-icon { font-size: 48px; margin-bottom: 16px; }
+
+.empty-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.empty-sub { font-size: 14px; color: var(--mgray); }
+
+/* ── STICKY FOOTER ────────────────────────────── */
+.sticky-footer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--footer-h);
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 12px;
+  z-index: 200;
+  box-shadow: 0 -2px 20px rgba(0,0,0,0.25);
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: background 0.18s ease;
+  flex: 1;
+  max-width: 110px;
+  min-width: 0;
+}
+
+.footer-link:hover { background: rgba(255,255,255,0.08); }
+
+.footer-link-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.footer-link-icon.ig {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-link-icon.ig svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-link-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-align: center;
+}
+
+.footer-link:hover .footer-link-text { color: rgba(255,255,255,0.9); }
+
+.footer-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+}
+
+.footer-cta {
+  background: var(--teal);
+  border-radius: 8px;
+}
+
+.footer-cta .footer-link-text { color: rgba(255,255,255,0.9); }
+.footer-cta:hover { background: var(--teal-dark) !important; }
+
+/* ── SECTION BREAK CARDS ──────────────────────── */
+.section-break {
+  grid-column: 1 / -1;
+  padding: 8px 0 4px;
+}
+
+.section-break-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-break-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  white-space: nowrap;
+}
+
+.section-break-line {
+  flex: 1;
+  height: 1.5px;
+  background: var(--teal-mid);
+  border-radius: 2px;
+}
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 600px) {
+  .mode-toggle { flex-direction: column; }
+  .mode-btn { min-width: unset; }
+  .prompt-grid { grid-template-columns: 1fr; }
+  .hero { padding: 28px 16px 24px; }
+  .sticky-footer { gap: 2px; padding: 0 6px; }
+  .footer-link { padding: 8px 6px; max-width: 90px; }
+  .footer-link-text { font-size: 7.5px; }
+}
+
+/* ── ANIMATIONS ───────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.prompt-card {
+  animation: fadeUp 0.3s ease both;
+}
+
+.prompt-card:nth-child(2) { animation-delay: 0.04s; }
+.prompt-card:nth-child(3) { animation-delay: 0.08s; }
+.prompt-card:nth-child(4) { animation-delay: 0.12s; }
+.prompt-card:nth-child(5) { animation-delay: 0.16s; }
+.prompt-card:nth-child(6) { animation-delay: 0.2s; }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://transformstrong.com" target="_blank" class="logo-link">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA2sAAAB4CAYAAABsH2o4AAAAAXNSR0IArs4c6QAAAMBlWElmTU0AKgAAAAgABwESAAMAAAABAAEAAAEaAAUAAAABAAAAYgEbAAUAAAABAAAAagEoAAMAAAABAAIAAAExAAIAAAARAAAAcgE7AAIAAAARAAAAhIdpAAQAAAABAAAAlgAAAAAAAACoAAAAAQAAAKgAAAABQ2FudmEgKFJlbmRlcmVyKQAAbWVnbWFyaWVjbGlmZm9yZAAAAAOgAQADAAAAAQABAACgAgAEAAAAAQAAA2ugAwAEAAAAAQAAAHgAAAAAal2o5wAAAAlwSFlzAAAZ1gAAGdYBGNHK7QAABRdpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDYuMC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgICAgICAgICB4bWxuczpBdHRyaWI9Imh0dHA6Ly9ucy5hdHRyaWJ1dGlvbi5jb20vYWRzLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8ZGM6Y3JlYXRvcj4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGk+bWVnbWFyaWVjbGlmZm9yZDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwvZGM6Y3JlYXRvcj4KICAgICAgICAgPGRjOnRpdGxlPgogICAgICAgICAgICA8cmRmOkFsdD4KICAgICAgICAgICAgICAgPHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ij5VbnRpdGxlZCBkZXNpZ24gLSAxPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOkFsdD4KICAgICAgICAgPC9kYzp0aXRsZT4KICAgICAgICAgPEF0dHJpYjpBZHM+CiAgICAgICAgICAgIDxyZGY6U2VxPgogICAgICAgICAgICAgICA8cmRmOmxpIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgICAgICAgPEF0dHJpYjpUb3VjaFR5cGU+MjwvQXR0cmliOlRvdWNoVHlwZT4KICAgICAgICAgICAgICAgICAgPEF0dHJpYjpDcmVhdGVkPjIwMjQtMDktMjk8L0F0dHJpYjpDcmVhdGVkPgogICAgICAgICAgICAgICAgICA8QXR0cmliOkV4dElkPjliZDhmNTUxLTZkMmMtNDMwMi1hYTc1LTIwNzg3ZDA4NzQzODwvQXR0cmliOkV4dElkPgogICAgICAgICAgICAgICAgICA8QXR0cmliOkZiSWQ+NTI1MjY1OTE0MTc5NTgwPC9BdHRyaWI6RmJJZD4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAgICAgPC9BdHRyaWI6QWRzPgogICAgICAgICA8eG1wOkNyZWF0b3JUb29sPkNhbnZhIChSZW5kZXJlcik8L3htcDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CtWQCx8AAEAASURBVHgB7Z0H2F1Ftb..." alt="Transform Strong" class="logo-img">
+  </a>
+  <span class="header-tag">Free Tool</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Transform Strong × AI</div>
+  <h1 class="hero-title">AI FAT LOSS<br><span>PROMPT FINDER</span></h1>
+  <p class="hero-sub">40 real prompts to keep you consistent. Pick your situation, copy the prompt, paste into any AI. Done.</p>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">40</div><div class="stat-label">Prompts</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Categories</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Cost</div></div>
+    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Tap to copy</div></div>
+  </div>
+</section>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <div class="mode-label">How do you want to use this?</div>
+  <div class="mode-toggle">
+    <button class="mode-btn active" data-mode="all" onclick="setMode('all', this)">
+      <span class="mode-btn-icon">💡</span>
+      <span class="mode-btn-title">Give Me Ideas</span>
+      <span class="mode-btn-sub">Show me everything</span>
+    </button>
+    <button class="mode-btn" data-mode="tracking" onclick="setMode('tracking', this)">
+      <span class="mode-btn-icon">📊</span>
+      <span class="mode-btn-title">I Track My Macros</span>
+      <span class="mode-btn-sub">Hitting specific numbers</span>
+    </button>
+    <button class="mode-btn" data-mode="notrack" onclick="setMode('notrack', this)">
+      <span class="mode-btn-icon">🙌</span>
+      <span class="mode-btn-title">I Don't Track</span>
+      <span class="mode-btn-sub">Real life decisions, no math</span>
+    </button>
+  </div>
+
+  <div class="cat-label">Filter by category</div>
+  <div class="cat-pills">
+    <button class="cat-pill active" data-cat="all" onclick="setCat('all', this)">All</button>
+    <button class="cat-pill" data-cat="meal" onclick="setCat('meal', this)">🍽 Meal Planning</button>
+    <button class="cat-pill" data-cat="eating-out" onclick="setCat('eating-out', this)">🍔 Eating Out</button>
+    <button class="cat-pill" data-cat="tracking" onclick="setCat('tracking', this)">📊 Tracking & Macros</button>
+    <button class="cat-pill" data-cat="protein" onclick="setCat('protein', this)">💪 Protein & Fiber</button>
+    <button class="cat-pill" data-cat="mindset" onclick="setCat('mindset', this)">🧠 Mindset</button>
+    <button class="cat-pill" data-cat="photo" onclick="setCat('photo', this)">📸 Photo Prompts</button>
+    <button class="cat-pill" data-cat="better" onclick="setCat('better', this)">✨ Better Prompts</button>
+  </div>
+</div>
+
+<!-- RESULTS BAR -->
+<div class="results-bar">
+  <div class="results-count">Showing <span id="count">40</span> prompts</div>
+  <button class="reset-btn" onclick="resetAll()">Reset filters</button>
+</div>
+
+<!-- EMPTY STATE -->
+<div class="empty-state" id="emptyState">
+  <div class="empty-icon">🔍</div>
+  <div class="empty-title">No prompts match that combo</div>
+  <div class="empty-sub">Try a different mode or category filter.</div>
+</div>
+
+<!-- PROMPT GRID -->
+<div class="prompt-grid" id="promptGrid"></div>
+
+<!-- STICKY FOOTER -->
+<footer class="sticky-footer">
+  <a href="https://megclifford.github.io/metabolism-quiz/" target="_blank" class="footer-link footer-cta">
+    <span class="footer-link-icon">🧬</span>
+    <span class="footer-link-text">Free Quiz</span>
+  </a>
+  <div class="footer-divider"></div>
+  <a href="https://api.leadconnectorhq.com/widget/booking/gQtolYI7GJBn4EgePvgy" target="_blank" class="footer-link">
+    <span class="footer-link-icon">📅</span>
+    <span class="footer-link-text">Audit Call</span>
+  </a>
+  <div class="footer-divider"></div>
+  <a href="https://www.skool.com/transformtribe/about" target="_blank" class="footer-link">
+    <span class="footer-link-icon">🏠</span>
+    <span class="footer-link-text">Free Community</span>
+  </a>
+  <div class="footer-divider"></div>
+  <a href="https://www.instagram.com/coachmegstrong" target="_blank" class="footer-link">
+    <span class="footer-link-icon ig">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/>
+        <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/>
+        <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
+      </svg>
+    </span>
+    <span class="footer-link-text">@coachmegstrong</span>
+  </a>
+</footer>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────────
+const PROMPTS = [
+  // MEAL PLANNING
+  { id:1, cat:'meal', catLabel:'Meal Planning', modes:['all','notrack'],
+    title:'The Fridge Cleanout',
+    prompt:'I have lean ground beef, potatoes, cheese, and low carb tortillas. What\'s a dinner I can make that\'s high protein but not super high calorie? Give me a few options and approximate macros for each.',
+    tip:'Use this anytime you\'re staring at the fridge with no plan. Just list what you have and let AI do the work.' },
+  { id:2, cat:'meal', catLabel:'Meal Planning', modes:['all','tracking'],
+    title:'The Weekly Meal Prep Planner',
+    prompt:'I want to meal prep for the week. I have about 2 hours on Sunday. Can you plan 5 high-protein dinners that use similar ingredients so I\'m not wasting food? Give me a shopping list too.',
+    tip:'Ask for overlapping ingredients to save money and reduce decision fatigue all week.' },
+  { id:3, cat:'meal', catLabel:'Meal Planning', modes:['all','notrack'],
+    title:'The Family Dinner Fix',
+    prompt:'I\'m trying to lose weight but still need to feed my family normal food. I have ground beef, potatoes, cheese, and tortillas. What\'s a dinner that\'s high protein but not super high calorie that everyone will eat?',
+    tip:'You can plate theirs normally and quietly adjust yours. Ask AI to show you the difference.' },
+  { id:4, cat:'meal', catLabel:'Meal Planning', modes:['all','notrack'],
+    title:'The Recipe Makeover',
+    prompt:'Here\'s a recipe I love. Can you help me rebuild it to be higher protein and lower calorie without making it taste like diet food? I still want my family to enjoy it.',
+    tip:'Paste or describe any recipe. AI is excellent at swapping ingredients while keeping the spirit of the dish.' },
+  { id:5, cat:'meal', catLabel:'Meal Planning', modes:['all','notrack'],
+    title:'The Breakfast That Keeps You Full',
+    prompt:'I only have eggs, Greek yogurt, fruit, and oatmeal at home. What\'s a breakfast that will keep me full for 3-4 hours and hit at least 30g of protein?',
+    tip:'Protein at breakfast is one of the biggest levers for hunger control. Make it a habit.' },
+  { id:6, cat:'meal', catLabel:'Meal Planning', modes:['all','notrack'],
+    title:'The Costco Run',
+    prompt:'I\'m going to Costco tomorrow. Can you build me a simple grocery list for easy high-protein meals that don\'t take forever to cook? I have about $150 to spend and two kids to feed.',
+    tip:'Add your budget and family size for a more realistic, usable list.' },
+  { id:7, cat:'meal', catLabel:'Meal Planning', modes:['all','notrack'],
+    title:'The Pasta Rebuild',
+    prompt:'I love pasta but I know it tanks my macros. Can you turn this pasta recipe into something more balanced — more protein, fewer empty calories — but still actually satisfying?',
+    tip:'Try swapping half the pasta for zucchini noodles or adding ground turkey to boost protein.' },
+  { id:8, cat:'meal', catLabel:'Meal Planning', modes:['all','notrack'],
+    title:'The Sweet Craving Fix',
+    prompt:'I\'ve had a stressful day and I want something sweet tonight, but I don\'t want to ruin my progress. What\'s a dessert I can make with what I have at home that fits my goals?',
+    tip:'List what\'s in your pantry. You\'d be surprised what AI can build with Greek yogurt, protein powder, and banana.' },
+
+  // EATING OUT
+  { id:9, cat:'eating-out', catLabel:'Eating Out', modes:['all','notrack'],
+    title:'The Restaurant Rescue',
+    prompt:'I\'m eating at Chili\'s tonight and I\'ve barely had any protein today 😅 What should I order if I\'m trying to lose weight but still want something that actually tastes good?',
+    tip:'Works for any restaurant. Just swap in the name and describe where you are in your day.' },
+  { id:10, cat:'eating-out', catLabel:'Eating Out', modes:['all','tracking'],
+    title:'The Fast Food Order Builder',
+    prompt:'I always get overwhelmed trying to hit my macros eating out. Can you build me an order from Chick-fil-A that\'s high protein and still fits my goals? I\'m targeting around 40g protein and under 600 calories.',
+    tip:'Use this for any chain: McDonald\'s, Chipotle, Panera, Panda Express. They all work.' },
+  { id:11, cat:'eating-out', catLabel:'Eating Out', modes:['all','notrack'],
+    title:'The Happy Hour Survival Guide',
+    prompt:'I\'m going to happy hour with coworkers. I\'d like to have a couple drinks but not completely blow my calories for the day. What are the lowest-calorie drink options and what should I eat beforehand?',
+    tip:'Planning ahead makes staying on track possible without saying no to everything social.' },
+  { id:12, cat:'eating-out', catLabel:'Eating Out', modes:['all','notrack'],
+    title:'The Road Trip Hack',
+    prompt:'I\'m driving 6 hours tomorrow and will only have gas stations and fast food. What are the best high-protein snacks and meals I can grab to stay on track without spiraling?',
+    tip:'Ask for a ranked list from best to worst — it helps when you\'re tired and hungry in line.' },
+  { id:13, cat:'eating-out', catLabel:'Eating Out', modes:['all','notrack'],
+    title:'The Date Night Plan',
+    prompt:'I have a nice dinner out on Friday. I don\'t want to stress about tracking but I also don\'t want to undo a week of progress. How should I eat during the day to set myself up?',
+    tip:'Front-load protein earlier in the day so you can relax and enjoy dinner without guilt or math.' },
+
+  // TRACKING & MACROS
+  { id:14, cat:'tracking', catLabel:'Tracking & Macros', modes:['all','tracking'],
+    title:'The End of Day Macro Fixer',
+    prompt:'I have about 300 calories and 20g of protein I still need to eat today and I\'m pretty hungry. Can you give me 3 snack options that are high protein and will actually keep me full?',
+    tip:'This is a game changer for the 8pm hunger spiral. Have a few go-to answers ready in advance.' },
+  { id:15, cat:'tracking', catLabel:'Tracking & Macros', modes:['all','tracking'],
+    title:'The Macro Audit',
+    prompt:'Here\'s what I ate today: [list your meals]. I\'m trying to hit 140g protein and stay around 1,800 calories. Can you tell me where I fell short and what I should add or swap tomorrow?',
+    tip:'You don\'t have to be perfect every day — but reviewing patterns helps you improve faster.' },
+  { id:16, cat:'tracking', catLabel:'Tracking & Macros', modes:['all','tracking'],
+    title:'The Night Hunger Problem',
+    prompt:'I keep getting hungry at night even when I hit my calories. Can you look at my meals today and tell me what I should change to feel more satisfied throughout the day?',
+    tip:'Usually a protein distribution problem. AI will spot it immediately — probably card 3 or 4 of your day.' },
+  { id:17, cat:'tracking', catLabel:'Tracking & Macros', modes:['all','notrack'],
+    title:'The No-Track Day Plan',
+    prompt:'I don\'t want to track today but I still want to make decent choices. Can you give me a full day of meals and snacks that will naturally land around 1,600 calories and 130g protein without me having to measure anything?',
+    tip:'Perfect for weekends, vacations, or mental health days. Consistency over perfection.' },
+  { id:18, cat:'tracking', catLabel:'Tracking & Macros', modes:['all','tracking'],
+    title:'The Protein Target Calculator',
+    prompt:'I weigh 165 lbs and I\'m trying to lose fat and maintain muscle. How much protein should I be eating per day? And what does that actually look like in real food — not just chicken and egg whites?',
+    tip:'Ask for variety. Protein doesn\'t have to be boring or repetitive.' },
+  { id:19, cat:'tracking', catLabel:'Tracking & Macros', modes:['all','tracking'],
+    title:'The Plateau Troubleshooter',
+    prompt:'I\'ve been eating around 1,400 calories for 8 weeks and the scale has stopped moving. Can you help me figure out if I should eat more, eat less, or change something else? Here\'s what a typical day looks like for me.',
+    tip:'Plateaus are almost always metabolic adaptation. AI can help you troubleshoot before you spiral.' },
+
+  // PROTEIN & FIBER
+  { id:20, cat:'protein', catLabel:'Protein & Fiber', modes:['all','tracking'],
+    title:'The Sneaky Protein Boost',
+    prompt:'I\'m only hitting about 80g of protein a day and I want to get to 130g. Can you show me 5 easy ways to add protein to meals I\'m already eating without cooking extra food?',
+    tip:'Think: Greek yogurt in sauces, cottage cheese in smoothies, egg whites in oatmeal. More options than you think.' },
+  { id:21, cat:'protein', catLabel:'Protein & Fiber', modes:['all','notrack'],
+    title:'The High-Protein Snack List',
+    prompt:'I need a list of high-protein snacks I can keep at my desk at work. I don\'t have a microwave and I can\'t have anything that smells. At least 15g protein per snack.',
+    tip:'Constraint-based prompts get dramatically better answers. Be specific about your situation.' },
+  { id:22, cat:'protein', catLabel:'Protein & Fiber', modes:['all','notrack'],
+    title:'The Fiber Fix',
+    prompt:'I\'m barely hitting 10g of fiber a day and I know I should be closer to 25g. What are the easiest ways to add fiber to my current meals without completely changing how I eat?',
+    tip:'Fiber keeps you full, stabilizes blood sugar, and is one of the most underrated fat loss tools.' },
+  { id:23, cat:'protein', catLabel:'Protein & Fiber', modes:['all','notrack'],
+    title:'The Vegetable Volume Hack',
+    prompt:'I struggle to eat vegetables because I don\'t really love the taste. Can you give me 5 ways to add vegetables to meals I already make so I barely notice them but still get the nutrition?',
+    tip:'Cauliflower rice, zucchini in pasta, spinach in smoothies — AI knows more tricks than you do.' },
+  { id:24, cat:'protein', catLabel:'Protein & Fiber', modes:['all','notrack'],
+    title:'The Kid-Friendly Protein Upgrade',
+    prompt:'My kids are picky eaters and our family meals are pretty carb-heavy. Can you help me add more protein to the meals we already love without the kids noticing the difference?',
+    tip:'The brownie makeover is a perfect example: higher protein, lower calorie, kids still eat it.' },
+  { id:25, cat:'protein', catLabel:'Protein & Fiber', modes:['all','notrack'],
+    title:'The Smoothie Rebuild',
+    prompt:'I make a fruit smoothie every morning but it\'s basically just sugar. Can you rebuild my smoothie to hit 30g protein, include some fiber, and still taste like a treat rather than a health drink?',
+    tip:'Add your current ingredients so AI can work with what you already buy — no wasted groceries.' },
+
+  // MINDSET & CONSISTENCY
+  { id:26, cat:'mindset', catLabel:'Mindset', modes:['all','notrack'],
+    title:'The Comeback Plan',
+    prompt:'I had a rough weekend and ate way off plan. I feel like I blew it. Can you help me create a simple plan for the next 3 days to get back on track without being too restrictive?',
+    tip:'You didn\'t ruin anything. One bad weekend can\'t undo weeks of progress. AI will remind you of that.' },
+  { id:27, cat:'mindset', catLabel:'Mindset', modes:['all','notrack'],
+    title:'The Vacation Strategy',
+    prompt:'I\'m going to an all-inclusive resort for 5 days. I don\'t want to track but I also don\'t want to come home feeling terrible. What are my best strategies for enjoying myself without completely derailing?',
+    tip:'Protein first, movement daily, enjoy everything else. AI will build a real plan around this.' },
+  { id:28, cat:'mindset', catLabel:'Mindset', modes:['all','notrack'],
+    title:'The Social Event Prep',
+    prompt:'I have a birthday party on Saturday with a lot of food and alcohol. How do I approach the day so I can enjoy it without guilt and without undoing my week?',
+    tip:'Front-loading and planning your first plate goes a long way before you even arrive.' },
+  { id:29, cat:'mindset', catLabel:'Mindset', modes:['all','notrack'],
+    title:'The Stress Eating Interrupt',
+    prompt:'I tend to emotionally eat when I\'m stressed at night. I\'ve already hit my calories for the day. Can you give me 3 strategies and 2 food options that might actually help without doing major damage?',
+    tip:'Acknowledge the pattern without shame. The goal is to reduce the damage, not eliminate all comfort.' },
+  { id:30, cat:'mindset', catLabel:'Mindset', modes:['all','tracking'],
+    title:'The Plateau Mindset Reset',
+    prompt:'I\'ve been in a deficit for 6 weeks and the scale has completely stalled for 3 weeks. I haven\'t changed anything. Walk me through the most likely reasons and what I should try first.',
+    tip:'This is one of the most powerful prompts in this list. AI gives you a real diagnostic, not just "eat less."' },
+
+  // PHOTO PROMPTS
+  { id:31, cat:'photo', catLabel:'Photo Prompts', modes:['all','notrack'],
+    title:'The Fridge Photo Prompt',
+    prompt:'[Take a photo of your fridge or pantry and share it with ChatGPT] Here\'s what I have right now. Can you give me 3 high-protein dinner ideas using only what you can see? Include approximate calories and protein for each.',
+    tip:'ChatGPT-4 with vision can actually see your fridge. This is one of the most practical uses of AI for fat loss.' },
+  { id:32, cat:'photo', catLabel:'Photo Prompts', modes:['all','notrack'],
+    title:'The Meal Photo Macro Estimate',
+    prompt:'[Take a photo of your plate] Can you estimate the macros in this meal? I know it won\'t be exact but I need a rough idea of protein, calories, and carbs.',
+    tip:'Not as accurate as weighing food, but far better than guessing. Great for eating out or home-cooked meals.' },
+  { id:33, cat:'photo', catLabel:'Photo Prompts', modes:['all','tracking'],
+    title:'The Food Label Decoder',
+    prompt:'[Take a photo of a nutrition label] Can you explain this label in plain English? Is this food a good choice if I\'m trying to hit 130g protein and stay around 1,800 calories?',
+    tip:'Nutrition labels are designed to confuse. AI will translate it into language you can actually use.' },
+  { id:34, cat:'photo', catLabel:'Photo Prompts', modes:['all','notrack'],
+    title:'The Restaurant Menu Helper',
+    prompt:'[Take a photo of a restaurant menu] I\'m at this restaurant and I\'m trying to hit my protein goals. Which options would you recommend and what should I avoid?',
+    tip:'Perfect for unfamiliar restaurants. No more googling nutrition info in the middle of dinner.' },
+
+  // BETTER PROMPTS
+  { id:35, cat:'better', catLabel:'Better Prompting', modes:['all','tracking'],
+    title:'Give AI Your Numbers',
+    prompt:'Instead of: "What should I eat?" — Try: "I have 400 calories and 25g of protein left today. I\'m hungry and tired. What should I eat?"',
+    tip:'The more specific you are, the more useful the answer. Vague questions get vague answers.' },
+  { id:36, cat:'better', catLabel:'Better Prompting', modes:['all','notrack'],
+    title:'Tell AI Your Constraints',
+    prompt:'Instead of: "What\'s a healthy snack?" — Try: "I need a high-protein snack I can eat in the car, no refrigeration, under 200 calories, and my budget is tight."',
+    tip:'Real life has constraints. AI answers get dramatically better when you include them.' },
+  { id:37, cat:'better', catLabel:'Better Prompting', modes:['all','notrack'],
+    title:'Ask for Options, Not One Answer',
+    prompt:'Instead of: "What should I make for dinner?" — Try: "Give me 3 different high-protein dinner options using chicken that are each under 500 calories. Include macros for all three."',
+    tip:'Having choices means you\'ll actually follow through. One prescription feels like a chore.' },
+  { id:38, cat:'better', catLabel:'Better Prompting', modes:['all','notrack'],
+    title:'Push Back If You Need To',
+    prompt:'If AI gives you an answer that doesn\'t fit your life, say so: "That sounds good but I hate fish. Can you rebuild that with chicken or turkey instead?"',
+    tip:'AI is a conversation, not a vending machine. Keep going until it actually works for you.' },
+  { id:39, cat:'better', catLabel:'Better Prompting', modes:['all','notrack'],
+    title:'Use It as a Thinking Partner',
+    prompt:'"I know I should eat more protein but I always forget about it until the end of the day and then I can\'t hit my goal. Can you help me think through why this keeps happening and what I could do differently?"',
+    tip:'Some of the best AI conversations aren\'t about food at all — they\'re about behavior and patterns.' },
+  { id:40, cat:'better', catLabel:'Better Prompting', modes:['all','notrack'],
+    title:'Save the Prompts That Work for You',
+    prompt:'"When AI gives you an answer you love, screenshot it. Build your own personal library of prompts that work for YOUR life, YOUR goals, and YOUR food preferences."',
+    tip:'This guide is just the starting point. The best prompt list is the one you build from your own real conversations.' },
+];
+
+// ── STATE ────────────────────────────────────────────────────────────────
+let currentMode = 'all';
+let currentCat = 'all';
+
+// ── RENDER ───────────────────────────────────────────────────────────────
+function renderCards() {
+  const grid = document.getElementById('promptGrid');
+  const countEl = document.getElementById('count');
+  const emptyEl = document.getElementById('emptyState');
+
+  const filtered = PROMPTS.filter(p => {
+    const modeMatch = p.modes.includes(currentMode);
+    const catMatch = currentCat === 'all' || p.cat === currentCat;
+    return modeMatch && catMatch;
+  });
+
+  countEl.textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '';
+    emptyEl.classList.add('visible');
+    return;
+  }
+
+  emptyEl.classList.remove('visible');
+
+  // Group by category
+  const groups = {};
+  filtered.forEach(p => {
+    if (!groups[p.catLabel]) groups[p.catLabel] = [];
+    groups[p.catLabel].push(p);
+  });
+
+  let html = '';
+  const showSections = currentCat === 'all';
+
+  Object.entries(groups).forEach(([label, prompts]) => {
+    if (showSections) {
+      html += `
+        <div class="section-break">
+          <div class="section-break-inner">
+            <span class="section-break-label">${label}</span>
+            <div class="section-break-line"></div>
+          </div>
+        </div>`;
+    }
+    prompts.forEach(p => {
+      html += `
+        <div class="prompt-card" data-id="${p.id}">
+          <div class="card-header">
+            <span class="card-num">#${String(p.id).padStart(2,'0')}</span>
+            <div class="card-meta">
+              <span class="card-cat">${p.catLabel}</span>
+              <div class="card-title">${p.title}</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="prompt-bubble">
+              <span class="prompt-text">${escHtml(p.prompt)}</span>
+            </div>
+            <div class="tip-row">
+              <span class="tip-label">Pro Tip</span>
+              <span class="tip-text">${escHtml(p.tip)}</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="copy-btn" onclick="copyPrompt(${p.id}, this)">
+              <span class="copy-icon">📋</span>
+              <span class="copy-text">Copy Prompt</span>
+            </button>
+          </div>
+        </div>`;
+    });
+  });
+
+  grid.innerHTML = html;
+}
+
+// ── ACTIONS ──────────────────────────────────────────────────────────────
+function setMode(mode, btn) {
+  currentMode = mode;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function setCat(cat, btn) {
+  currentCat = cat;
+  document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards();
+}
+
+function resetAll() {
+  currentMode = 'all';
+  currentCat = 'all';
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('[data-mode="all"]').classList.add('active');
+  document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+  document.querySelector('[data-cat="all"]').classList.add('active');
+  renderCards();
+}
+
+function copyPrompt(id, btn) {
+  const prompt = PROMPTS.find(p => p.id === id);
+  if (!prompt) return;
+
+  navigator.clipboard.writeText(prompt.prompt).then(() => {
+    const textEl = btn.querySelector('.copy-text');
+    const iconEl = btn.querySelector('.copy-icon');
+    btn.classList.add('copied');
+    iconEl.textContent = '✅';
+    textEl.textContent = 'Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      iconEl.textContent = '📋';
+      textEl.textContent = 'Copy Prompt';
+    }, 2000);
+  }).catch(() => {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = prompt.prompt;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const textEl = btn.querySelector('.copy-text');
+    const iconEl = btn.querySelector('.copy-icon');
+    btn.classList.add('copied');
+    iconEl.textContent = '✅';
+    textEl.textContent = 'Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      iconEl.textContent = '📋';
+      textEl.textContent = 'Copy Prompt';
+    }, 2000);
+  });
+}
+
+function escHtml(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────
+renderCards();
+</script>
+</body>
+</html>
